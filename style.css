@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px 20px;
+}
+
+.grid-container {
+    display: grid;
+    max-width: 500px;
+    height: 500px;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr); 
+}
+
+.grid-item {
+    font-size: 12px;
+    color: black;
+    border: 1px solid black;
+}
+
