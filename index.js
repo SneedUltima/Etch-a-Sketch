@@ -1,10 +1,12 @@
 const gridContainer = document.querySelector(".grid-container")
 const gridItem = document.querySelector(".grid-item")
-const clear= document.querySelector("#clear")
+const clear = document.querySelector("#clear")
+const eraser = document.querySelector("#eraser")
+const black = document.querySelector("#black")
+const rainbow = document.querySelector("#rainbow")
 const size = document.querySelector("#size")
 const slider = document.querySelector("#range")
 const sliderValue = document.querySelector("#slider-value")
-
 
 // Create grid layout on load of size 16x16
 window.addEventListener('load', () => gridLayout(256));
@@ -12,7 +14,13 @@ window.addEventListener('load', () => gridLayout(256));
 // Function to create grid layout
 function gridLayout(n) {
     for(i = 0; i < n; i++) {
-        const divGrid = document.createElement("div");
+        createGridItem()
+    }
+}
+
+// Function to create grid item for layout
+function createGridItem() {
+    const divGrid = document.createElement("div");
         divGrid.classList.add('grid-item'); 
         divGrid.textContent = "";
         divGrid.style.border = "1px solid black"
@@ -20,7 +28,18 @@ function gridLayout(n) {
         divGrid.addEventListener("mouseover", () => {
             divGrid.style.backgroundColor = "black";
         })
-    }
+    black.addEventListener("click", () => {
+        divGrid.addEventListener("mouseover", () => {
+            divGrid.style.backgroundColor = "black";
+    })})
+    eraser.addEventListener("click", () => {
+        divGrid.addEventListener("mouseover", () => {
+            divGrid.style.backgroundColor = "white";
+    })})
+    rainbow.addEventListener("click", () => {
+        divGrid.addEventListener("mouseover", () => {
+            divGrid.style.backgroundColor = `${getRandomColor()}`;
+    })})
 }
 
 function createGrid(value) {
@@ -50,5 +69,15 @@ slider.oninput = function() {
     clearGrid(gridContainer)
     createGrid(value)
 }
+
+function getRandomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+  
 
 
