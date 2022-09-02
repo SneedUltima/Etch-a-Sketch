@@ -2,6 +2,8 @@ const gridContainer = document.querySelector(".grid-container")
 const gridItem = document.querySelector(".grid-item")
 const clear= document.querySelector("#clear")
 const size = document.querySelector("#size")
+const slider = document.querySelector("#range")
+const sliderValue = document.querySelector("#slider-value")
 
 // Create grid layout on load of size 16x16
 window.addEventListener('load', () => createGrid(256));
@@ -27,11 +29,11 @@ function clearGrid(parent) {
     }
 }
 
-// Event listener to change size of grid on click
-size.addEventListener("click", () => {
-    let gridNumber = prompt("How many squares would you like in your grid: ")
+// Event listener to clear grid and change size of grid on slider change
+slider.oninput = function() {
+    sliderValue.textContent = `${this.value} x ${this.value}`;
     clearGrid(gridContainer)
-    gridContainer.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
-    gridContainer.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
-    createGrid(gridNumber * gridNumber)
-})
+    gridContainer.style.gridTemplateColumns = `repeat(${this.value}, 1fr)`;
+    gridContainer.style.gridTemplateRows = `repeat(${this.value}, 1fr)`;
+    createGrid(this.value * this.value)
+}
