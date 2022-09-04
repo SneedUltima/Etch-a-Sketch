@@ -7,24 +7,26 @@
     <title>Etch-a-Sketch</title>
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
     <header class="header">
         <h1>Etch-a-Sketch</h1>
     </header>
-    <div class="slidecontainer">
-        <input type="range" min="1" max="64" value="16" class="slider" id="range">
+    <div class="slide-container">
+        <input class="rangeSlider" type="range" min="1" max="64" value="16" class="slider" id="range">
         <p id="slider-value">16 x 16</p>
       </div>
-    <button id="clear">Clear</button>
-    <div class="color-buttons">
-        <button id="black">Black</button>
-        <button id="rainbow">Rainbow</button>
-        <button id="eraser">Eraser</button>
-    </div>
     <div class="grid-container">
 
     </div>
+    <div class="buttons">
+        <button id="clear">Clear</button>
+        <button id="black">Black</button>
+        <button id="rainbow">Random</button>
+        <button id="eraser">Eraser</button>
+    </div>
+    <div class="footer">Sneed Ultima&copy; GitHub 2022</div>
     
 </body>
 </html>

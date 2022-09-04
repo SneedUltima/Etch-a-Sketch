@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&family=Permanent+Marker&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -6,13 +8,124 @@
 
 body {
     margin: 20px 20px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    height: 100vh;
+}
+
+.header{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    text-shadow: 2px 2px #ff0000;
+}
+
+.slide-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.rangeSlider {
+    width: 400px;
+    height: 15px;
+    background: #111;
+    border-radius: 15px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+    cursor: pointer;
+}
+
+#slider-value {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .grid-container {
     display: grid;
-    max-width: 600px;
-    height: 600px;
+    max-width: auto;
+    height: 550px;
+    margin: 20px 50px;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr); 
+    background-color: rgb(250,235,215);
+    border: 30px solid red;
+    border-radius: 3%;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#clear {
+    padding: 10px 10px;
+    background-color: white;    
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 15%;
+
+}
+
+#clear:hover {
+    background-color: rgb(228, 227, 227);
+}
+
+#black {
+    padding: 10px 10px;
+    background-color: rgb(15, 15, 15);    
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15%;
+}
+
+#black:hover {
+    background-color: rgb(42, 42, 42);
+}
+
+#rainbow {
+    padding: 10px 10px;
+    color: white;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,91,70,1) 100%);   
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15%;
+    
+}
+
+#rainbow:hover {
+    background-color: rgb(228, 227, 227);
+}
+
+#eraser {
+    padding: 10px 10px;
+    background-color: rgb(227, 130, 185);    
+    cursor: pointer;
+    border-radius: 15%;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+#eraser:hover {
+    background-color: rgb(195, 110, 158);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-shadow: 2px 2px #ff0000;
+}

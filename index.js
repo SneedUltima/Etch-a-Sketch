@@ -23,7 +23,7 @@ function createGridItem() {
     const divGrid = document.createElement("div");
         divGrid.classList.add('grid-item'); 
         divGrid.textContent = "";
-        divGrid.style.border = "1px solid black"
+        divGrid.style.border = "1px solid lightgrey"
         gridContainer.appendChild(divGrid);
         divGrid.addEventListener("mouseover", () => {
             divGrid.style.backgroundColor = "black";
@@ -34,7 +34,7 @@ function createGridItem() {
     })})
     eraser.addEventListener("click", () => {
         divGrid.addEventListener("mouseover", () => {
-            divGrid.style.backgroundColor = "white";
+            divGrid.style.backgroundColor = "rgb(250,235,215)";
     })})
     rainbow.addEventListener("click", () => {
         divGrid.addEventListener("mouseover", () => {
@@ -70,6 +70,7 @@ slider.oninput = function() {
     createGrid(value)
 }
 
+// function to return random color
 function getRandomColor() {
     let letters = '0123456789ABCDEF';
     let color = '#';
